@@ -1,0 +1,1174 @@
+{
+  "intents": [
+    {
+      "intent": "grazie",
+      "examples": [
+        {
+          "text": "Buona giornata"
+        },
+        {
+          "text": "Buon lavoro"
+        },
+        {
+          "text": "Grazie!"
+        },
+        {
+          "text": "Grazie mille"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "materie",
+      "examples": [
+        {
+          "text": "Che ha insegnato il professore?"
+        },
+        {
+          "text": "Che insegna il professore?"
+        },
+        {
+          "text": "Che insegna @professori?"
+        },
+        {
+          "text": "Chi è il professore che insegna #materie?"
+        },
+        {
+          "text": "Cosa fa il professore?"
+        },
+        {
+          "text": "Cosa ha fatto il professore?"
+        }
+      ],
+      "description": "Che ha insegnato il professore?"
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "no"
+        },
+        {
+          "text": "no grazie"
+        },
+        {
+          "text": "non credo"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "orari",
+      "examples": [
+        {
+          "text": "A che ora è la lezione di @materie?"
+        },
+        {
+          "text": "A che ora si tiene la lezione di @materie?"
+        },
+        {
+          "text": "Che ha insegnato il professore?"
+        },
+        {
+          "text": "Che orario ha il professore?"
+        },
+        {
+          "text": "Vorrei conoscere l'orario delle mie materie"
+        }
+      ],
+      "description": "A che ora è la lezione di @materie?"
+    },
+    {
+      "intent": "ricevimento",
+      "examples": [
+        {
+          "text": "A che ora riceve il professore?"
+        },
+        {
+          "text": "In che giorni riceve il professore?"
+        },
+        {
+          "text": "In che giorni riceve il professore di @materie?"
+        },
+        {
+          "text": "Posso conoscere i giorni di ricevimento di @professori?"
+        },
+        {
+          "text": "Quando può ricevere il professore?"
+        },
+        {
+          "text": "Quando riceve il @professori?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "sì",
+      "examples": [
+        {
+          "text": "certo"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "si"
+        },
+        {
+          "text": "sì"
+        },
+        {
+          "text": "va bene"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "grazie",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Saluti",
+          "synonyms": [
+            "Buona giornata",
+            "Ciao",
+            "Grazie",
+            "Grazie mille"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "materie",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "educazione fisica",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "filosofia",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "fisica",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "inglese",
+          "synonyms": [
+            "ing"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "italiano",
+          "synonyms": [
+            "ita"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "matematica",
+          "synonyms": [
+            "mate"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "scienze",
+          "synonyms": [
+            "scie"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "storia",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "professori",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Buccoliero",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Chimenti",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Lincesso",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Massaro",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ricci",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Rochira",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Spada",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Vampo",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Benvenuto",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Salve. Come posso aiutarti? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Benvenuto"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Di quale professore vuoi sapere l'orario?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1613748665897",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1613748665910",
+      "previous_sibling": "handler_6_1613748665910"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1613749587823",
+      "context": {
+        "sysd": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_1_1613749587838"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Di quale professore vuoi sapere la materia?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1613835358450",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1613835358460",
+      "previous_sibling": "handler_4_1613835358460"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "A che ora vuoi prenotare?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1613749646241",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1613749646242",
+      "previous_sibling": "handler_7_1613749646242"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1613144167021",
+      "context": {
+        "materie": "@materie"
+      },
+      "conditions": "@materie",
+      "event_name": "input",
+      "dialog_node": "handler_4_1613144167037"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Per favore, dimmi a che ora vorresti prenotare."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_3_1613749646241",
+      "event_name": "nomatch",
+      "dialog_node": "handler_4_1613749691946",
+      "previous_sibling": "handler_3_1613749646242"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1613835358450",
+      "context": {
+        "professori": "@professori"
+      },
+      "conditions": "@professori",
+      "event_name": "input",
+      "dialog_node": "handler_4_1613835358460"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1613837118305",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1613837118306",
+      "previous_sibling": "handler_5_1613837118306"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Quale giorno vuoi prenotare?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_2_1613749587823",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1613749587838",
+      "previous_sibling": "handler_1_1613749587838"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Per favore dimmi in che giorno vorresti prenotare."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_2_1613749587823",
+      "event_name": "nomatch",
+      "dialog_node": "handler_5_1613749716538",
+      "previous_sibling": "handler_5_1613749587838"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_5_1613837118305",
+      "event_name": "input",
+      "dialog_node": "handler_5_1613837118306"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1613748665897",
+      "context": {
+        "professori": "@professori"
+      },
+      "conditions": "@professori",
+      "event_name": "input",
+      "dialog_node": "handler_6_1613748665910"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Di che materia vuoi sapere l'orario?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1613144167021",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1613144167037",
+      "previous_sibling": "handler_4_1613144167037"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1613749646241",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_7_1613749646242"
+    },
+    {
+      "type": "standard",
+      "title": "In altri casi",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Non ho capito. Puoi riformulare la frase?"
+              },
+              {
+                "text": "Puoi ripetere usando altre parole? Non ho capito."
+              },
+              {
+                "text": "Non ho capito cosa mi hai detto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "In altri casi",
+      "previous_sibling": "node_8_1613144367986",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "frame",
+      "title": "Materie",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#materie",
+      "dialog_node": "node_2_1613835256800",
+      "previous_sibling": "node_7_1613748633024"
+    },
+    {
+      "type": "standard",
+      "title": "Prenotazione ricevimento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vuoi prenotare il ricevimento con @professori?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "dialog_node": "node_3_1613748885400",
+      "previous_sibling": "node_2_1613835256800"
+    },
+    {
+      "type": "frame",
+      "title": "Orario",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#orari",
+      "dialog_node": "node_5_1613140911047",
+      "previous_sibling": "Benvenuto"
+    },
+    {
+      "type": "frame",
+      "title": "sì",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Va bene, il tuo appuntamento è stato prenotato."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1613748885400",
+      "conditions": "#sì",
+      "dialog_node": "node_5_1613748930435"
+    },
+    {
+      "type": "frame",
+      "title": "Ricevimento",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1613748885400"
+      },
+      "conditions": "#ricevimento",
+      "dialog_node": "node_7_1613748633024",
+      "previous_sibling": "node_5_1613140911047"
+    },
+    {
+      "type": "standard",
+      "title": "Grazie",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buona giornata!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#grazie",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1613144367986",
+      "previous_sibling": "node_3_1613748885400"
+    },
+    {
+      "type": "standard",
+      "title": "no",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Va bene, fammi sapere se ti serve qualcos'altro!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1613748885400",
+      "conditions": "#no",
+      "dialog_node": "node_8_1613748961911",
+      "previous_sibling": "node_5_1613748930435"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Matematica c'è martedì fra le 11 e le 13, mercoledì fra le 10 e le 11 e sabato fra le 12 e le 13. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:matematica",
+      "dialog_node": "response_10_1613141263804",
+      "previous_sibling": "response_3_1613141248498"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna italiano."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Chimenti",
+      "dialog_node": "response_10_1613835409577",
+      "previous_sibling": "response_6_1613835402974"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Fisica c'è lunedì dalle 12 alle 13, giovedì dalle 12 alle 13, e sabato dalle 9 alle 10."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:fisica",
+      "dialog_node": "response_1_1613836423409",
+      "previous_sibling": "response_4_1613836417621"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è mercoledì dalle 14 alle 15"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Buccoliero",
+      "dialog_node": "response_1_1613837280315",
+      "previous_sibling": "response_4_1613837266476"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è lunedì dalle 10 alle 11 e mercoledì dalle 14 alle 16."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Rochira",
+      "dialog_node": "response_2_1613748707091"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Italiano c'è lunedì fra le 9 e le 11, giovedì fra le 9 e le 10 e venerdì fra le 9 e le 10. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:italiano",
+      "dialog_node": "response_3_1613141248498",
+      "previous_sibling": "slot_1_1613144167021"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è mercoledì dalle 15 alle 16"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Vampo",
+      "dialog_node": "response_3_1613748803613",
+      "previous_sibling": "response_8_1613748802676"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Scienze c'è martedì dalle 8 e alle 9, mercoledì dalle 11 alle 13, giovedì dalle 8 alle 9 e venerdì dalle 8 alle 9."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:scienze",
+      "dialog_node": "response_3_1613836381185",
+      "previous_sibling": "response_10_1613141263804"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è lunedì dalle 15 alle 16"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Massaro",
+      "dialog_node": "response_4_1613748804459",
+      "previous_sibling": "response_3_1613748803613"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Filosofia c'è mercoledì dalle 8 alle 9 e sabato dalle 11 alle 12."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:filosofia",
+      "dialog_node": "response_4_1613836417621",
+      "previous_sibling": "response_3_1613836381185"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna educazione fisica."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Buccoliero",
+      "dialog_node": "response_4_1613837038290",
+      "previous_sibling": "response_6_1613837011777"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è venerdì dalle 15 alle 16."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Chimenti",
+      "dialog_node": "response_4_1613837255317",
+      "previous_sibling": "response_4_1613748804459"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è lunedì dalle 15 alle 16"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Spada",
+      "dialog_node": "response_4_1613837266476",
+      "previous_sibling": "response_4_1613837255317"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Inglese c'è lunedì dalle 8 alle 9, giovedì dalle 11 alle 12 e venerdì dalle 10 alle 11."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:inglese",
+      "dialog_node": "response_5_1613836447516",
+      "previous_sibling": "response_9_1613836442169"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna fisica."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Spada",
+      "dialog_node": "response_5_1613836986062",
+      "previous_sibling": "response_10_1613835409577"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna storia e filosofia."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Massaro",
+      "dialog_node": "response_6_1613835402974",
+      "previous_sibling": "response_7_1613835397661"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna inglese."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Lincesso",
+      "dialog_node": "response_6_1613836993140",
+      "previous_sibling": "response_5_1613836986062"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna informatica."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Ricci",
+      "dialog_node": "response_6_1613837011777",
+      "previous_sibling": "response_7_1613837000313"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è giovedì dalle 15 alle 16"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Lincesso",
+      "dialog_node": "response_6_1613837291270",
+      "previous_sibling": "response_1_1613837280315"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna matematica."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Vampo",
+      "dialog_node": "response_7_1613835397661",
+      "previous_sibling": "response_9_1613835358254"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna matematica."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Vampo",
+      "dialog_node": "response_7_1613837000313",
+      "previous_sibling": "response_6_1613836993140"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "L'orario è martedì dalle 14 alle 15"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1613748633024",
+      "conditions": "@professori:Ricci",
+      "dialog_node": "response_8_1613748802676",
+      "previous_sibling": "response_2_1613748707091"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Insegna scienze."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1613835256800",
+      "conditions": "@professori:Rochira",
+      "dialog_node": "response_9_1613835358254",
+      "previous_sibling": "slot_5_1613837118305"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Storia c'è giovedì dalle 10 alle 11 e venerdì dalle 11 alle 12."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:storia",
+      "dialog_node": "response_9_1613836432610",
+      "previous_sibling": "response_1_1613836423409"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Educazione fisica c'è martedì dalle 9 alle 10 e sabato dalle 8 alle 9."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1613140911047",
+      "conditions": "@materie:(educazione fisica)",
+      "dialog_node": "response_9_1613836442169",
+      "previous_sibling": "response_9_1613836432610"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_5_1613140911047",
+      "variable": "$materie",
+      "dialog_node": "slot_1_1613144167021"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_5_1613748930435",
+      "variable": "$sysd",
+      "dialog_node": "slot_2_1613749587823"
+    },
+    {
+      "type": "slot",
+      "parent": "node_7_1613748633024",
+      "variable": "$professori",
+      "dialog_node": "slot_3_1613748665897",
+      "previous_sibling": "response_6_1613837291270"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_5_1613748930435",
+      "variable": "$time",
+      "dialog_node": "slot_3_1613749646241",
+      "previous_sibling": "slot_2_1613749587823"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1613835256800",
+      "variable": "$professori",
+      "dialog_node": "slot_5_1613835358450"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1613835256800",
+      "dialog_node": "slot_5_1613837118305",
+      "previous_sibling": "slot_5_1613835358450"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Intendevi dire:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nessuno dei precedenti"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Intendevi dire:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Classe",
+  "language": "it",
+  "description": "classe"
+}
